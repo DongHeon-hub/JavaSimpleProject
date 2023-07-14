@@ -80,3 +80,4 @@ public class Student {
                 "\nBalance: " + tuitionBalance;
     }
 }
+
