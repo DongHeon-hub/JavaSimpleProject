@@ -1,14 +1,27 @@
 package studentdatabaseapp;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class StudentDatabaseApp {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         Student[] students;
-        int numOfStudents = in.nextInt();
+        int numOfStudents;
+
+        while(true) {
+            try {
+                System.out.print("Enter the students number : ");
+                numOfStudents = in.nextInt();
+                break;
+            } catch(InputMismatchException e){
+                System.out.println("Enter the Integer!. Enter Again.");
+                in.nextLine(); // make Buffer Empty
+                continue;
+            }
+        }
+
         students = new Student[numOfStudents];
-        System.out.println("hello world!");
 
         for(int n = 0; n<numOfStudents; n++){
             students[n] = new Student();
